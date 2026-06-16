@@ -1,0 +1,1972 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "HU_CAREER_GATE",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Account/CreateAccount": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUpDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUpDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUpDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Account/Login": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Hr/CreateAccountHr": {
+      "post": {
+        "tags": [
+          "Hr"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "City",
+                  "CompanyName",
+                  "Country",
+                  "IsFreeLanser",
+                  "Name"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "CompanyName": {
+                    "type": "string"
+                  },
+                  "IsFreeLanser": {
+                    "type": "boolean"
+                  },
+                  "Status": {
+                    "type": "string"
+                  },
+                  "Country": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "pattern": "07(7|8|9)\\d{7}",
+                    "type": "string"
+                  },
+                  "ProfileImg": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ProfileImgName": {
+                    "type": "string"
+                  },
+                  "Cv": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "CvName": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "CompanyName": {
+                  "style": "form"
+                },
+                "IsFreeLanser": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                },
+                "Country": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Phone": {
+                  "style": "form"
+                },
+                "ProfileImg": {
+                  "style": "form"
+                },
+                "ProfileImgName": {
+                  "style": "form"
+                },
+                "Cv": {
+                  "style": "form"
+                },
+                "CvName": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Hr/GetHr": {
+      "get": {
+        "tags": [
+          "Hr"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Hr/UpdateHR": {
+      "put": {
+        "tags": [
+          "Hr"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "City",
+                  "CompanyName",
+                  "Country",
+                  "IsFreeLanser",
+                  "Name"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "CompanyName": {
+                    "type": "string"
+                  },
+                  "IsFreeLanser": {
+                    "type": "boolean"
+                  },
+                  "Status": {
+                    "type": "string"
+                  },
+                  "Country": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "pattern": "07(7|8|9)\\d{7}",
+                    "type": "string"
+                  },
+                  "ProfileImg": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ProfileImgName": {
+                    "type": "string"
+                  },
+                  "Cv": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "CvName": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "CompanyName": {
+                  "style": "form"
+                },
+                "IsFreeLanser": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                },
+                "Country": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Phone": {
+                  "style": "form"
+                },
+                "ProfileImg": {
+                  "style": "form"
+                },
+                "ProfileImgName": {
+                  "style": "form"
+                },
+                "Cv": {
+                  "style": "form"
+                },
+                "CvName": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Hr/GetCountTask": {
+      "get": {
+        "tags": [
+          "Hr"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Hr/GetCountHR": {
+      "get": {
+        "tags": [
+          "Hr"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/GetUsers": {
+      "get": {
+        "tags": [
+          "Manager"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/DeactivateStudent/{id}": {
+      "put": {
+        "tags": [
+          "Manager"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/DeactivateHr/{id}": {
+      "put": {
+        "tags": [
+          "Manager"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/ActivateStudent/{id}": {
+      "put": {
+        "tags": [
+          "Manager"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/ActivateHr/{id}": {
+      "put": {
+        "tags": [
+          "Manager"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/GetProfile/{id}/{Type}": {
+      "get": {
+        "tags": [
+          "Manager"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/SearchUser": {
+      "get": {
+        "tags": [
+          "Manager"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/top-hr": {
+      "get": {
+        "tags": [
+          "Manager"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/monthly-decisions": {
+      "get": {
+        "tags": [
+          "Manager"
+        ],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "year"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Manager/decision-years": {
+      "get": {
+        "tags": [
+          "Manager"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Student/CreateAccount": {
+      "post": {
+        "tags": [
+          "Student"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "City",
+                  "Country",
+                  "GPA",
+                  "JobLevel",
+                  "JobType",
+                  "Name",
+                  "State"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "State": {
+                    "type": "string"
+                  },
+                  "GPA": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "JobType": {
+                    "type": "string"
+                  },
+                  "JobLevel": {
+                    "type": "string"
+                  },
+                  "Country": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "pattern": "07(7|8|9)\\d{7}",
+                    "type": "string"
+                  },
+                  "ProfileImg": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ProfileImgName": {
+                    "type": "string"
+                  },
+                  "Cv": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "CvName": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "State": {
+                  "style": "form"
+                },
+                "GPA": {
+                  "style": "form"
+                },
+                "JobType": {
+                  "style": "form"
+                },
+                "JobLevel": {
+                  "style": "form"
+                },
+                "Country": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Phone": {
+                  "style": "form"
+                },
+                "ProfileImg": {
+                  "style": "form"
+                },
+                "ProfileImgName": {
+                  "style": "form"
+                },
+                "Cv": {
+                  "style": "form"
+                },
+                "CvName": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Student/GetStudent": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Student/UpdateStudent": {
+      "put": {
+        "tags": [
+          "Student"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "City",
+                  "Country",
+                  "GPA",
+                  "JobLevel",
+                  "JobType",
+                  "Name",
+                  "State"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "State": {
+                    "type": "string"
+                  },
+                  "GPA": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "JobType": {
+                    "type": "string"
+                  },
+                  "JobLevel": {
+                    "type": "string"
+                  },
+                  "Country": {
+                    "type": "string"
+                  },
+                  "City": {
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "pattern": "07(7|8|9)\\d{7}",
+                    "type": "string"
+                  },
+                  "ProfileImg": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "ProfileImgName": {
+                    "type": "string"
+                  },
+                  "Cv": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "CvName": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "State": {
+                  "style": "form"
+                },
+                "GPA": {
+                  "style": "form"
+                },
+                "JobType": {
+                  "style": "form"
+                },
+                "JobLevel": {
+                  "style": "form"
+                },
+                "Country": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Phone": {
+                  "style": "form"
+                },
+                "ProfileImg": {
+                  "style": "form"
+                },
+                "ProfileImgName": {
+                  "style": "form"
+                },
+                "Cv": {
+                  "style": "form"
+                },
+                "CvName": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Student/GetCountTaskSubmited": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Student/GetCountStudent": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Student/Get-Students": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/CreateTask": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "HR.City",
+                  "HR.CompanyName",
+                  "HR.Country",
+                  "HR.IsFreeLanser",
+                  "HR.Name",
+                  "JobLevel",
+                  "JobType",
+                  "TaskDescription",
+                  "TaskSubject",
+                  "TimeInHours",
+                  "TimeInMinutes"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TaskSubject": {
+                    "type": "string"
+                  },
+                  "TaskDescription": {
+                    "type": "string"
+                  },
+                  "JobLevel": {
+                    "type": "string"
+                  },
+                  "JobType": {
+                    "type": "string"
+                  },
+                  "TimeInHours": {
+                    "maximum": 3,
+                    "minimum": 0,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TimeInMinutes": {
+                    "maximum": 59,
+                    "minimum": 0,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TaskPdf": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "TaskPdfName": {
+                    "type": "string"
+                  },
+                  "HrId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "HR.Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "HR.Name": {
+                    "type": "string"
+                  },
+                  "HR.CompanyName": {
+                    "type": "string"
+                  },
+                  "HR.IsFreeLanser": {
+                    "type": "boolean"
+                  },
+                  "HR.Status": {
+                    "type": "string"
+                  },
+                  "HR.Country": {
+                    "type": "string"
+                  },
+                  "HR.City": {
+                    "type": "string"
+                  },
+                  "HR.Phone": {
+                    "pattern": "07(7|8|9)\\d{7}",
+                    "type": "string"
+                  },
+                  "HR.ProfileImg": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "HR.ProfileImgName": {
+                    "type": "string"
+                  },
+                  "HR.Cv": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "HR.CvName": {
+                    "type": "string"
+                  },
+                  "HR.Email": {
+                    "type": "string"
+                  },
+                  "Questions": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "TaskSubject": {
+                  "style": "form"
+                },
+                "TaskDescription": {
+                  "style": "form"
+                },
+                "JobLevel": {
+                  "style": "form"
+                },
+                "JobType": {
+                  "style": "form"
+                },
+                "TimeInHours": {
+                  "style": "form"
+                },
+                "TimeInMinutes": {
+                  "style": "form"
+                },
+                "TaskPdf": {
+                  "style": "form"
+                },
+                "TaskPdfName": {
+                  "style": "form"
+                },
+                "HrId": {
+                  "style": "form"
+                },
+                "HR.Id": {
+                  "style": "form"
+                },
+                "HR.Name": {
+                  "style": "form"
+                },
+                "HR.CompanyName": {
+                  "style": "form"
+                },
+                "HR.IsFreeLanser": {
+                  "style": "form"
+                },
+                "HR.Status": {
+                  "style": "form"
+                },
+                "HR.Country": {
+                  "style": "form"
+                },
+                "HR.City": {
+                  "style": "form"
+                },
+                "HR.Phone": {
+                  "style": "form"
+                },
+                "HR.ProfileImg": {
+                  "style": "form"
+                },
+                "HR.ProfileImgName": {
+                  "style": "form"
+                },
+                "HR.Cv": {
+                  "style": "form"
+                },
+                "HR.CvName": {
+                  "style": "form"
+                },
+                "HR.Email": {
+                  "style": "form"
+                },
+                "Questions": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/GetTasks": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/GetTaskInfo/{id}": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/DeactivateTask/{taskId}": {
+      "put": {
+        "tags": [
+          "Task"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/GetDeactiveTask": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/SearchJob": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "parameters": [
+          {
+            "name": "JobLevel",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "JopType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/generateQuestions": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateQuestionsDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateQuestionsDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateQuestionsDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/regenerateQuestion": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateQuestionsDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateQuestionsDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateQuestionsDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/GetQuestions": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/GetCountJob": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Task/top-job-types": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/can-start/{taskId}": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/StartTask/{taskId}": {
+      "post": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/GetTimeEnd/{TaskId}": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "parameters": [
+          {
+            "name": "TaskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/SubmitTask": {
+      "post": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskSubmissionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskSubmissionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskSubmissionDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/GetApplicationTask": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/GetStudentProfileTask": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "taskId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/GetStudentDetailsinTask": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "parameters": [
+          {
+            "name": "Taskid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/GetStudentApplication": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "parameters": [
+          {
+            "name": "Taskid",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/GetInfoTask/{taskId}": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/decision": {
+      "post": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DecisionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DecisionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DecisionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/GetCountTaskSubmit": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/accepted-count": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskSubmission/Reject-count": {
+      "get": {
+        "tags": [
+          "TaskSubmission"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskViolation/start/{taskId}": {
+      "post": {
+        "tags": [
+          "TaskViolation"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskViolation/violation/{taskId}": {
+      "post": {
+        "tags": [
+          "TaskViolation"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaskViolation/status/{taskId}": {
+      "get": {
+        "tags": [
+          "TaskViolation"
+        ],
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DecisionDto": {
+        "type": "object",
+        "properties": {
+          "submissionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "decision": {
+            "type": "string",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GenerateQuestionsDTO": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HRTaskDTO": {
+        "required": [
+          "jobLevel",
+          "jobType",
+          "taskDescription",
+          "taskSubject",
+          "timeInHours",
+          "timeInMinutes"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taskSubject": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "taskDescription": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "jobLevel": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "jobType": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "timeInHours": {
+            "maximum": 3,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeInMinutes": {
+            "maximum": 59,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "taskPdf": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "taskPdfName": {
+            "type": "string",
+            "nullable": true
+          },
+          "hrId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "hr": {
+            "$ref": "#/components/schemas/HrDTO"
+          },
+          "questions": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HrDTO": {
+        "required": [
+          "city",
+          "companyName",
+          "country",
+          "isFreeLanser",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "companyName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "isFreeLanser": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "city": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "phone": {
+            "pattern": "07(7|8|9)\\d{7}",
+            "type": "string",
+            "nullable": true
+          },
+          "profileImg": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "profileImgName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cv": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "cvName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignInDTO": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignUpDTO": {
+        "required": [
+          "email",
+          "password",
+          "roleName"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "roleName": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StudentDTO": {
+        "required": [
+          "city",
+          "country",
+          "gpa",
+          "jobLevel",
+          "jobType",
+          "name",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "state": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "gpa": {
+            "type": "number",
+            "format": "double"
+          },
+          "jobType": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "jobLevel": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "country": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "city": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "phone": {
+            "pattern": "07(7|8|9)\\d{7}",
+            "type": "string",
+            "nullable": true
+          },
+          "profileImg": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "profileImgName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cv": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "cvName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TaskSubmissionDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taskId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hrTask": {
+            "$ref": "#/components/schemas/HRTaskDTO"
+          },
+          "studentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "student": {
+            "$ref": "#/components/schemas/StudentDTO"
+          },
+          "score": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timeEnd": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timeTakenInMinutes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codeSubmission": {
+            "type": "string",
+            "nullable": true
+          },
+          "isSubmitted": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "studentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "feedBack": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

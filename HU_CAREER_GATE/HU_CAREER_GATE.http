@@ -1,0 +1,6 @@
+@HU_CAREER_GATE_HostAddress = http://localhost:5098
+
+GET {{HU_CAREER_GATE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
